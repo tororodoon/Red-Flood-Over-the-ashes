@@ -1,0 +1,953 @@
+focus_tree = {
+	id = USA_anarchist
+	country = {
+		factor = 1
+		modifier = {
+			add = 5
+			tag = USA
+		}
+	}
+
+	continuous_focus_position = { x = 2300 y = 900 }
+	default = no
+	shared_focus = USA_hunt_bonnie_and_clyde
+	shared_focus = USA_second_vinson_act
+	shared_focus = USA_billy_mitchels_air
+	shared_focus = USA_reviewmilitaryspending
+	#shared_focus = USA_our_direction
+	#Focus for Increase the Corporate Tax
+	focus = {
+		id = USA_increase_the_corporate_tax
+		icon = GFX_focus_USA_increase_the_corporate_tax
+		x = 13
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_stringent_regulation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = 150
+		add_stability = -0.10
+		}
+	}
+
+	#Focus for Libraries of Knowledge
+	focus = {
+		id = USA_libraries_of_knowledge
+		icon = GFX_focus_USA_libraries_of_knowledge
+		x = 13
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_extreme_welfare }
+		mutually_exclusive = { focus = USA_libraries_of_tools }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_research_slot = 1
+		}
+	}
+
+	#Focus for Intimidate the Senate
+	focus = {
+		id = USA_intimidate_the_senate
+		icon = GFX_focus_USA_intimidate_the_senate
+		x = 11
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_supreme_court_shuffle }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_popularity = {
+		ideology = popular_socialism
+		popularity = 0.10
+		}
+		}
+	}
+
+	#Focus for Democracy at Home
+	focus = {
+		id = USA_democracy_at_home
+		icon = GFX_focus_USA_democracy_at_home
+		x = 10
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_stabilize_the_coalition }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_popularity = {
+		ideology = popular_socialism
+		popularity = 0.40
+		}
+		add_popularity = {
+		ideology = conservatism
+		popularity = 0.10
+		}
+		add_popularity = {
+		ideology = progressivism
+		popularity = 0.30
+		}
+		add_popularity = {
+		ideology = liberalism
+		popularity = 0.10
+		}
+		}
+	}
+
+	#Focus for Right to Information
+	focus = {
+		id = USA_right_to_information
+		icon = GFX_focus_USA_right_to_information
+		x = 15
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_extreme_welfare }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_right_to_information
+		add_political_power = -100
+		}
+	}
+
+	#Focus for Close Down the Prison System
+	focus = {
+		id = USA_close_down_the_prison_system
+		icon = GFX_focus_USA_close_down_the_prison_system
+		x = 8
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_end_of_the_police }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower = 22321
+			add_stability = -0.15
+			#add_timed_idea = { idea = USA_crimeoverride days = 200}
+			add_popularity = {
+				ideology = popular_socialism
+				popularity = 0.10
+			}
+		}
+	}
+
+	#Focus for A Better America
+	focus = {
+		id = USA_a_better_america
+		icon = GFX_focus_USA_a_better_america
+		x = 7
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_end_the_price_system }
+		mutually_exclusive = { focus = USA_a_fairer_america }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		country_event = {
+		id = usa.343
+		days = 1
+		}
+		}
+	}
+
+	#Focus for Let the Land Rest
+	focus = {
+		id = USA_let_the_land_rest
+		icon = GFX_focus_USA_let_the_land_rest
+		x = 4
+		y = 2
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_aid_the_dust_migrants }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = -100
+		add_stability = 0.10
+		}
+	}
+
+	#Focus for Crush the Backlash
+	focus = {
+		id = USA_crush_the_backlash
+		icon = GFX_focus_USA_crush_the_backlash
+		x = 8
+		y = 11
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_and_in_the_work_place 
+		}
+		prerequisite = { 
+			focus = USA_close_down_the_prison_system 
+		}
+		prerequisite = { 
+			focus = USA_civil_rights_for_all 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				add_popularity = {
+		ideology = popular_socialism
+		popularity = 1
+		}
+		add_stability = -0.20
+		}
+	}
+
+	#Focus for End of the Police
+	focus = {
+		id = USA_end_of_the_police
+		icon = GFX_focus_USA_end_of_the_police
+		x = 8
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_stabilize_the_coalition }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = -0.15
+		add_political_power = 10
+		add_war_support = 0.10
+		}
+	}
+
+	#Focus for And in the Work Place
+	focus = {
+		id = USA_and_in_the_work_place
+		icon = GFX_focus_USA_and_in_the_work_place
+		x = 10
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_democracy_at_home }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_democracyinwork
+		}
+	}
+
+	#Focus for Libraries of Tools
+	focus = {
+		id = USA_libraries_of_tools
+		icon = GFX_focus_USA_libraries_of_tools
+		x = 11
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = USA_libraries_of_knowledge }
+		prerequisite = { focus = USA_extreme_welfare }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_librariestools
+		}
+	}
+
+	#Focus for End the Price System
+	focus = {
+		id = USA_end_the_price_system
+		icon = GFX_focus_USA_end_the_price_system
+		x = 8
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_crush_the_backlash }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = -999
+		add_ideas = USA_nomoreprices
+		}
+	}
+
+	#Focus for Civil Rights for All
+	focus = {
+		id = USA_civil_rights_for_all
+		icon = GFX_focus_USA_civil_rights_for_all
+		x = 6
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_use_coxs_legacy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_radicalcivilrights
+		}
+	}
+
+	#Focus for Stabilize the Coalition
+	focus = {
+		id = USA_stabilize_the_coalition
+		icon =  GFX_focus_USA_stabilize_the_coalition
+		x = 8
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_pensions_for_the_old 
+		}
+		prerequisite = { 
+			focus = USA_end_of_the_dustbowl 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				add_popularity = {
+		ideology = popular_socialism
+		popularity = 0.40
+		}
+				add_popularity = {
+		ideology = progressivism
+		popularity = 0.40
+		}
+		add_stability = 0.25
+		add_political_power = -125
+		}
+	}
+
+	#Focus for Education for All
+	focus = {
+		id = USA_education_for_all
+		icon = GFX_focus_USA_education_for_all
+		x = 12
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_libraries_of_knowledge 
+			focus = USA_libraries_of_tools 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_research_slot = 1
+		add_political_power = -250
+		}
+	}
+
+	#Focus for Extreme Welfare
+	focus = {
+		id = USA_extreme_welfare
+		icon = GFX_focus_USA_extreme_welfare
+		x = 12
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_intimidate_the_senate 
+		}
+		prerequisite = { 
+			focus = USA_increase_the_corporate_tax 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = -150
+		add_ideas = USA_extremewelfare
+		add_stability = 0.15
+		}
+	}
+
+	#Focus for Fund the Radio Stations
+	focus = {
+		id = USA_fund_the_radio_stations
+		icon = GFX_focus_USA_fund_the_radio_stations
+		x = 15
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_right_to_information }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		add_political_power = 100
+		add_war_support = 0.10
+		}
+	}
+
+	#Focus for Pensions for the Old
+	focus = {
+		id = USA_pensions_for_the_old
+		icon = GFX_focus_USA_pensions_for_the_old
+		x = 12
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_education_for_all 
+		}
+		prerequisite = { 
+			focus = USA_and_medicine_for_the_sick 
+		}
+		prerequisite = { 
+			focus = USA_fund_the_radio_stations 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_pensionforold
+		}
+	}
+
+	#Focus for And Medicine for the Sick
+	focus = {
+		id = USA_and_medicine_for_the_sick
+		icon = GFX_focus_USA_and_medicine_for_the_sick
+		x = 9
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_healthcare_for_all }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = -200
+		add_stability = 0.10
+		}
+	}
+
+	#Focus for Stringent Regulation
+	focus = {
+		id = USA_stringent_regulation
+		icon = GFX_focus_USA_stringent_regulation
+		x = 13
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_executive_order_for_federal_funding }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.25
+		add_political_power = -150
+		}
+	}
+
+	#Focus for Frogs in a Frying Pan
+	focus = {
+		id = USA_frogs_in_a_frying_pan
+		icon = GFX_focus_USA_frogs_in_a_frying_pan
+		x = 0
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_communal_food }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = -0.25
+		add_political_power = -100
+		add_war_support = -0.15
+		}
+	}
+
+	#Focus for Communal Food
+	focus = {
+		id = USA_communal_food
+		icon = GFX_focus_USA_communal_food
+		x = 0
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_community_help_schemes }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = -0.15
+		add_political_power = 100
+		add_ideas = USA_communalfood
+		}
+	}
+
+	#Focus for Communal Housing
+	focus = {
+		id = USA_communal_housing
+		icon = GFX_focus_USA_communal_housing
+		x = 2
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_community_help_schemes }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = -0.40
+		swap_ideas = {
+		remove_idea = USA_collapsingamericanvalues
+		add_idea = USA_collapsedamericanvalues
+		}
+		}
+	}
+
+	#Focus for Flynn's Presidency
+	focus = {
+		id = USA_flynns_presidency
+		icon = GFX_focus_USA_flynns_presidency
+		x = 8
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				add_popularity = {
+		ideology = popular_socialism
+		popularity = 0.20
+		}
+		}
+	}
+
+	#Focus for Bread Basket Once More
+	focus = {
+		id = USA_bread_basket_once_more
+		icon = GFX_focus_USA_bread_basket_once_more
+		x = 4
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_crop_rotations }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		add_political_power = 100
+		}
+	}
+
+	#Focus for Dust Begins to Settle
+	focus = {
+		id = USA_dust_begins_to_settle
+		icon = GFX_focus_USA_dust_begins_to_settle
+		x = 4
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_slum_improvements 
+		}
+		prerequisite = { 
+			focus = USA_bread_basket_once_more 
+		}
+		prerequisite = { 
+			focus = USA_transfer_the_means_of_production 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = USA_dustbowl_improve_1
+				add_idea = USA_dustbowl_improve_2
+			}
+		}
+	}
+
+	#Focus for End of the Dustbowl
+	focus = {
+		id = USA_end_of_the_dustbowl
+		icon = GFX_focus_USA_end_of_the_dustbowl
+		x = 4
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_dust_begins_to_settle }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = USA_dustbowl_improve_2
+			add_political_power = 100
+			add_war_support = 0.10
+		}
+	}
+
+	#Focus for Supreme Court Shuffle
+	focus = {
+		id = USA_supreme_court_shuffle
+		icon = GFX_focus_USA_supreme_court_shuffle
+		x = 11
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_executive_order_for_federal_funding }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		add_political_power = -50
+		}
+	}
+
+	#Focus for Transfer the Means of Production
+	focus = {
+		id = USA_transfer_the_means_of_production
+		icon = GFX_focus_USA_transfer_the_means_of_production
+		x = 7
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_the_right_to_a_job }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = -0.50
+		add_political_power = 150
+		random_owned_state = {
+		add_building_construction = {
+	type = industrial_complex
+	level = 2
+	instant_build = yes
+}
+		}
+		random_owned_state = {
+		add_building_construction = {
+	type = industrial_complex
+	level = 2
+	instant_build = yes
+}
+		}
+		}
+	}
+
+	#Focus for Union Dominance
+	focus = {
+		id = USA_union_dominance
+		icon = GFX_focus_USA_union_dominance
+		x = 6
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_empower_the_farming_unions }
+		mutually_exclusive = { focus = USA_level_the_playing_field }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_unionsdominance
+		}
+	}
+
+	#Focus for Empower the Farming Unions
+	focus = {
+		id = USA_empower_the_farming_unions
+		icon = GFX_focus_USA_empower_the_farming_unions
+		x = 7
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_aid_the_dust_migrants }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		384 ={
+add_building_construction = {
+	type = infrastructure
+	level = 2
+	instant_build = yes
+}
+}
+		1046 ={
+add_building_construction = {
+	type = infrastructure
+	level = 2
+	instant_build = yes
+}
+}
+		}
+	}
+
+	#Focus for Slum Improvements
+	focus = {
+		id = USA_slum_improvements
+		icon = GFX_focus_USA_slum_improvements
+		x = 1
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_frogs_in_a_frying_pan 
+		}
+		prerequisite = { 
+			focus = USA_housing_building_projects 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		358 = {
+add_building_construction = {
+	type = infrastructure
+	level = 2
+	instant_build = yes
+}
+		}
+		378 = {
+add_building_construction = {
+	type = infrastructure
+	level = 2
+	instant_build = yes
+}
+		}
+		}
+	}
+
+	#Focus for Use Cox's Legacy
+	focus = {
+		id = USA_use_coxs_legacy
+		icon = GFX_focus_USA_use_coxs_legacy
+		x = 6
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_stabilize_the_coalition }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.15
+		add_political_power = 100
+		add_popularity = {
+		ideology = popular_socialism
+		popularity = 0.10
+		}
+		}
+	}
+
+	#Focus for Crop Rotations
+	focus = {
+		id = USA_crop_rotations
+		icon = GFX_focus_USA_crop_rotations
+		x = 4
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_soil_conservation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_croprotations
+		}
+	}
+
+	#Focus for Soil Conservation
+	focus = {
+		id = USA_soil_conservation
+		icon = GFX_focus_USA_soil_conservation
+		x = 4
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_let_the_land_rest }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		add_ideas = USA_soilconservation
+		}
+	}
+
+	#Focus for Aid the Dust Migrants
+	focus = {
+		id = USA_aid_the_dust_migrants
+		icon = GFX_focus_USA_aid_the_dust_migrants
+		x = 4
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_flynns_presidency }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_manpower = -23410
+		add_stability = 0.25
+		}
+	}
+
+	#Focus for Community Help Schemes
+	focus = {
+		id = USA_community_help_schemes
+		icon = GFX_focus_USA_community_help_schemes
+		x = 1
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_aid_the_dust_migrants }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_communityhelp
+		}
+	}
+
+	#Focus for Housing Building Projects
+	focus = {
+		id = USA_housing_building_projects
+		icon = GFX_focus_USA_housing_building_projects
+		x = 2
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_communal_housing }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		every_owned_state = {
+		add_building_construction = {
+	type = infrastructure
+	level = 1
+	instant_build = yes
+}
+		}
+		add_stability = 0.25
+		add_political_power = -250
+		}
+	}
+
+	#Focus for Executive Order for Federal Funding
+	focus = {
+		id = USA_executive_order_for_federal_funding
+		icon = GFX_focus_USA_executive_order_for_federal_funding
+		x = 12
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_flynns_presidency }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = 600
+		add_stability = -0.30
+		}
+	}
+
+	#Focus for Level the Playing Field
+	focus = {
+		id = USA_level_the_playing_field
+		icon = GFX_focus_USA_level_the_playing_field
+		x = 8
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_empower_the_farming_unions }
+		mutually_exclusive = { focus = USA_union_dominance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		}
+	}
+
+	#Focus for The Right to a Job
+	focus = {
+		id = USA_the_right_to_a_job
+		icon = GFX_focus_USA_the_right_to_a_job
+		x = 7
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_union_dominance 
+			focus = USA_level_the_playing_field 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = USA_righttojob
+		}
+	}
+
+	#Focus for Healthcare for All
+	focus = {
+		id = USA_healthcare_for_all
+		icon = GFX_focus_USA_healthcare_for_all
+		x = 9
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_extreme_welfare }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.40
+		add_political_power = -999
+		}
+	}
+
+	#Focus for A Fairer America
+	focus = {
+		id = USA_a_fairer_america
+		icon = GFX_focus_USA_a_fairer_america
+		x = 9
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_end_the_price_system }
+		mutually_exclusive = { focus = USA_a_better_america }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.15
+		hidden_effect = {
+		country_event = {
+		id = usa.343
+		days = 1
+		}
+		}
+		}
+	}
+
+#End of focuses 
+ }

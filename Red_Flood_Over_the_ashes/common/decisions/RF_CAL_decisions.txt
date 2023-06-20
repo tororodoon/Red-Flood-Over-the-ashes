@@ -1,0 +1,515 @@
+CAL_foreign_policy = {
+	CAL_invade_DES = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+		}
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			declare_war_on = {
+				target = DST type = annex_everything
+			}
+			add_state_core = 380
+			add_state_core = 379
+		}
+	}
+	CAL_invade_SEG = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 380
+			}
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 380
+			}
+		}
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			declare_war_on = {
+				target = SEG type = annex_everything
+			}
+			add_state_core = 386
+			add_state_core = 387
+			add_state_core = 385
+			add_state_core = 1047
+		}
+	}
+	CAL_invade_PHX_NAV_WYO = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 1047
+			}
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 1047
+			}
+		}
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			declare_war_on = {
+				target = WYO type = annex_everything
+			}
+			declare_war_on = {
+				target = NAV type = annex_everything
+			}
+			declare_war_on = {
+				target = PHX type = annex_everything
+			}
+			add_state_core = 381
+			add_state_core = 377
+			add_state_core = 388
+			add_state_core = 1044
+		}
+	}
+	CAL_go_further = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 1044
+			}	
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 1044
+			}
+		}
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			add_war_support = -0.10
+			add_political_power = 125
+			add_manpower = 10000
+			hidden_effect = {
+				set_country_flag = CAL_gofurther
+				set_cosmetic_tag = CAL_REG
+			}
+		}
+	}
+	CAL_invade_NeMeCo = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 1044
+				has_country_flag = CAL_gofurther
+			}
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 1044
+				has_country_flag = CAL_gofurther
+			}
+		}
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			declare_war_on = {
+				target = MCO type = annex_everything
+			}
+			add_state_core = 382
+			add_state_core = 376
+		}
+	}
+	CAL_invade_DAK_TEX = {
+		icon = generic_nationalism
+		cost = 50
+		ai_will_do = {
+			factor = 0.5
+		}
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 376
+				has_country_flag = CAL_gofurther
+			}
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 376
+				has_country_flag = CAL_gofurther
+			}
+		}
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			declare_war_on = {
+				target = TEX type = annex_everything
+			}
+			declare_war_on = {
+				target = DAK type = annex_everything
+			}
+		add_state_core = 390
+		add_state_core = 389
+		add_state_core = 375
+		}
+	}
+	CAL_invade_LOU_DIX_MOS = {
+		icon = generic_nationalism
+		cost = 50
+		ai_will_do = {
+			factor = 0.5
+		}
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 375
+				has_country_flag = CAL_gofurther
+			}
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 375
+				has_country_flag = CAL_gofurther
+			}
+		}
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+		declare_war_on = {
+			target = LOU type = annex_everything
+		}
+		declare_war_on = {
+			target = DIX type = annex_everything
+		}
+		declare_war_on = {
+			target = MOS type = annex_everything
+		}
+		add_state_core = 371
+		add_state_core = 372
+		add_state_core = 373
+		}
+	}
+	CAL_integrate_DIX = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 100
+		visible = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 373
+				has_country_flag = CAL_gofurther
+			}
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 373
+				has_country_flag = CAL_gofurther
+			}
+		}
+		fire_only_once = yes
+		days_remove = 100
+		complete_effect = {
+			every_state = {
+				limit = {
+					is_core_of = DIX
+				}
+				add_core_of = CAL
+			}
+		}
+	}
+	CAL_invade_USA_PUR = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+			visible = {
+				has_country_flag = CAL_expand
+				tag = CAL
+				CAL = {
+					owns_state = 373
+					has_country_flag = CAL_gofurther
+				}
+				
+			}
+			available = {
+				has_country_flag = CAL_expand
+				tag = CAL
+				CAL = {
+					owns_state = 373
+					has_country_flag = CAL_gofurther
+				}
+			}
+		fire_only_once = yes
+		days_remove = 100
+		complete_effect = {
+			if = {
+				limit = {
+					all_state = {
+						is_core_of = USA
+						is_owned_by = PUR
+					}
+				}
+				declare_war_on = { target = PUR type = annex_everything }
+			}
+			else = {
+				declare_war_on = { target = USA type = annex_everything }
+				declare_war_on = { target = PUR type = annex_everything }
+			}
+		}
+	}
+	CAL_invade_VMT_NEE = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+			visible = {
+				has_country_flag = CAL_expand
+				tag = CAL
+			CAL = {
+				owns_state = 395
+				has_country_flag = CAL_gofurther
+			}
+		}
+		available = {
+			has_country_flag = CAL_expand
+			tag = CAL
+			CAL = {
+				owns_state = 395
+				has_country_flag = CAL_gofurther
+			}
+		}
+		fire_only_once = yes
+		days_remove = 100
+		complete_effect = {
+			if = {
+				limit = {
+					all_state = {
+						is_core_of = VMT
+						is_owned_by = NEE
+					}
+				}
+				declare_war_on = { target = NEE type = annex_everything }
+			}
+			else = {
+				declare_war_on = {
+					target = VMT type = annex_everything
+				}
+				declare_war_on = {
+					target = NEE type = annex_everything
+				}
+			}
+		add_state_core = 357
+		add_state_core = 1048
+		}
+	}
+	CAL_core_USA_bodin = {
+		icon = generic_nationalism
+		cost = 300
+		ai_will_do = {
+			factor = 0.5
+		}
+			visible = {
+				has_country_flag = CAL_expand
+				tag = CAL
+				has_government = accelerationism
+				CAL = {
+					owns_state = 395
+					has_country_flag = CAL_gofurther
+				}
+				
+			}
+			available = {
+				has_country_flag = CAL_expand
+				tag = CAL
+				has_government = accelerationism
+				CAL = {
+					owns_state = 395
+					has_country_flag = CAL_gofurther
+					}
+			}
+		fire_only_once = yes
+		days_remove = 100
+		complete_effect = {
+			news_event = {
+				id = news.74
+			}
+			country_event = {
+				id = CAL.145
+				days = 50
+			}
+			every_state = {
+				limit = {
+					is_core_of = USA
+				}
+				add_core_of = CAL
+			}
+			set_cosmetic_tag = CAL_USA
+			hidden_effect = {
+				set_global_flag = CAL_UNI
+			}
+		}
+	}
+	CAL_core_USA_sinclair = {
+		icon = generic_nationalism
+		cost = 300
+		ai_will_do = {
+			factor = 0.5
+		}
+			visible = {
+				has_country_flag = CAL_expand
+				tag = CAL
+				CAL = {
+					has_government = revisionist_socialism
+					owns_state = 395
+					has_country_flag = CAL_gofurther
+				}
+				
+			}
+			available = {
+				has_country_flag = CAL_expand
+				tag = CAL
+				CAL = {
+					has_government = revisionist_socialism
+					owns_state = 395
+					has_country_flag = CAL_gofurther
+					}
+			}
+		fire_only_once = yes
+		days_remove = 100
+		complete_effect = {
+			news_event = {
+				id = news.75
+			}
+			every_state = {
+				limit = {
+					is_core_of = USA
+				}
+				add_core_of = CAL
+			}
+			set_cosmetic_tag = CAL_USA
+			hidden_effect = {
+				set_global_flag = CAL_UNI
+			}
+		}
+	}
+##### ENTRENCH OURSELVES DECISIONS ####
+	CAL_fortifications = {
+		icon = generic_nationalism
+		ai_will_do = {
+			factor = 0.5
+		}
+		cost = 50
+		visible = {
+			has_country_flag = CAL_entrench
+			tag = CAL				
+		}
+		available = {
+			has_country_flag = CAL_entrench
+			tag = CAL
+		}
+		fire_only_once = yes
+		days_remove = 100
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			378 = {
+				add_building_construction = {
+					type = bunker
+						province = 11658
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 710
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 1601
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 1432
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 7667
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 1651
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 4657
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 4727
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+						province = 7986
+					level = 2
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,2493 @@
+focus_tree = { 
+	id = CAL
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CAL
+		}
+	}
+	continuous_focus_position = { x = 50 y =1500}
+	#Californian Introductory Event, California Dreamin'
+	focus = {
+		id = CAL_californiadreamin
+		icon = GFX_california_dreamin
+		x = 14
+		y = 0
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.2
+				}
+				country_event = {
+					days = 3
+					id = CAL.3
+				}
+				country_event = {
+					days = 4
+					id = CAL.4
+				}
+			}
+			country_event = {
+				days = 1
+				id = CAL.1
+			}
+		}
+	}
+	focus = {
+		id = CAL_theneutrallocation
+		icon = GFX_the_neutral_location
+		relative_position_id = CAL_californiadreamin
+		x = 0
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_californiadreamin
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = 50
+		add_stability = -0.01
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.6
+				}
+			}
+			country_event = {
+				days = 1
+				id = CAL.5
+			}
+		}
+	}
+	focus = {
+		id = CAL_preperationforelection
+		icon = GFX_preparation_for_election
+		x = 0
+		y = 1
+		relative_position_id = CAL_theneutrallocation
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_theneutrallocation
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+			ideology = liberalism
+			popularity = 0.1
+			}
+			add_popularity = {
+			ideology = conservatism
+			popularity = 0.1
+			}
+			add_popularity = {
+			ideology = despotism
+			popularity = 0.05
+			}
+			add_popularity = {
+			ideology = anarchism
+			popularity = 0.1
+			}
+			country_event = {
+				days = 1
+				id = CAL.7
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = CAL_reclaimjefferson
+		icon = GFX_reclaim_jefferson
+		x = -1
+		y = 1
+		relative_position_id = CAL_preperationforelection
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_preperationforelection
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		available = {
+			is_subject = no
+			JEF = { exists = yes }
+		}
+		will_lead_to_war_with = JEF
+		completion_reward = {
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.10
+				}
+				JEF = {
+					add_opinion_modifier = {
+						target = CAL
+						modifier = huge_decrease
+					}
+				}
+				CAL = { 
+					add_opinion_modifier = {
+						target = JEF
+						modifier = huge_decrease 
+					}
+				}
+			}
+			JEF = {
+				country_event = {
+					days = 1 
+					id = CAL.777
+				}
+			}
+			create_wargoal = {
+				type = annex_everything target = JEF
+			}
+			country_event = {
+				days = 1
+				id = CAL.9
+			}
+		}
+	}
+	focus = {
+		id = CAL_prepareagainstmormonmachinations
+		icon = GFX_prepare_against_mormon_machinations
+		x = 1
+		y = 1
+		relative_position_id = CAL_preperationforelection
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_preperationforelection
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.12
+				}
+			}
+			DST = {
+				add_opinion_modifier = {
+					target = CAL
+					modifier = huge_decrease
+				}
+			}
+			CAL = { 
+				add_opinion_modifier = {
+					target = DST
+					modifier = huge_decrease 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_electionday
+		icon = GFX_election_day
+		x = 0
+		y = 2
+		relative_position_id = CAL_preperationforelection
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_prepareagainstmormonmachinations
+		}
+		prerequisite = {
+			focus = CAL_reclaimjefferson
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = {
+				
+			}
+			country_event = {
+				days = 1
+				id = CAL.8
+			}
+			add_stability = -0.07
+		}
+	}
+	#END OF INTRO TREE
+	#SPIRITUALIST BRANCH
+	focus = {
+		id = CAL_scareme
+		icon = GFX_scare_me
+		x = 5
+		y = 5
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_electionday
+		}
+		available = {
+			has_country_flag = bodin_in_power
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = {
+				days = 1
+				id = CAL.113
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.16
+				}
+				country_event = {
+					days = 6
+					id = CAL.17
+				}
+				country_event = {
+					days = 7
+					id = CAL.18
+				}
+				country_event = {
+					days = 9
+					id = CAL.19
+				}
+				country_event = {
+					days = 3
+					id = CAL.20
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_theplotsagainstamerica
+		icon = GFX_the_plots_against_america
+		x = 1
+		y = 6
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_scareme
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				days = 0
+				id = CAL.21
+			}
+		}
+		completion_reward = {
+		add_war_support = 0.10
+		add_stability = -0.03
+		add_timed_idea = { idea = CAL_revealingtheplots  days = 25 }
+			hidden_effect = {
+				country_event = {
+					days = 6
+					id = CAL.23
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_warplansword
+		icon = GFX_war_plan_sword
+		x = 1
+		y = 7
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_theplotsagainstamerica
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_subject = no
+		}
+		will_lead_to_war_with = HAW
+		completion_reward = {
+			country_event = {
+				days = 1
+				id = CAL.24
+			}
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.25
+				}
+				HAW = {
+					add_opinion_modifier = {
+						target = CAL
+						modifier = huge_decrease
+					}
+				}
+				CAL = { 
+					add_opinion_modifier = {
+						target = HAW
+						modifier = huge_decrease 
+					}
+				}
+			}
+			HAW = {
+				country_event = {
+					days = 1
+					id = CAL.888
+				}
+			}
+			create_wargoal = {
+				type = annex_everything target = HAW
+			}
+		}
+	}
+	focus = {
+		id = CAL_colonizehawaii
+		icon = GFX_colonise_hawaii
+		x = 1
+		y = 8
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_warplansword
+		}
+		available = {
+			CAL = {
+				owns_state = 629
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.27
+				}
+			}
+			378 = {
+				add_manpower = -100000
+			}
+			629 = {
+				add_manpower = 100000
+			}
+			CAL = {
+				add_state_core = 629
+			}
+		}
+	}
+	focus = {
+		id = CAL_investigationsintothespiritual
+		icon = GFX_investigations_into_the_spiritual
+		x = 3
+		y = 6
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_scareme
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.28
+			}
+		}
+		completion_reward = {
+		add_ideas = CAL_investigatingspiritual
+			country_event = {
+				days = 3
+				id = CAL.29
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.30
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_protestantmystalica
+		icon = GFX_protestant_mysticalia
+		x = 3
+		y = 7
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_investigationsintothespiritual
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.34
+			}
+		}
+		completion_reward = {
+		add_ideas = CAL_protestantism
+			country_event = {
+				days = 3
+				id = CAL.35
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.36
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_beyondchristianity
+		icon = GFX_beyond_christianity
+		x = 3
+		y = 8
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_protestantmystalica
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.37
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CAL_protestantism
+				add_idea = CAL_paganism
+			}
+			hidden_effect = {
+				country_event = {
+					days = 8
+					id = CAL.39
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_cinemasetfree
+		icon = GFX_cinema_set_free
+		x = 5
+		y = 6
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_scareme
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.40
+			}
+		}
+		completion_reward = {
+		add_research_slot = 1
+		add_ideas = CAL_freecinema
+		add_political_power = 100
+		add_stability = -0.10
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.42
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_awakentheworld
+		icon = GFX_awaken_the_world
+		x = 5
+		y = 7
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_cinemasetfree
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.43
+			}
+		}
+		completion_reward = {
+		add_ideas = CAL_awakeningtheworld
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = news.987
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_endpapism
+		icon = GFX_end_papism
+		x = 5
+		y = 8
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_awakentheworld
+		}
+		ai_will_do = { factor = 1 }
+		select_effect = {
+			country_event = {
+				days = 0 
+				id = CAL.68 
+			} 
+		} 
+		completion_reward = {
+		378 = {
+		add_manpower = -342
+		}
+		add_stability = 0.05
+		add_political_power = 100
+		add_war_support = 0.05
+			hidden_effect = { 
+				country_event = { days = 10 id = CAL.70 } 
+			}
+		}
+	}
+	focus = {
+		id = CAL_investigationsintothephysical
+		icon = GFX_investigations_into_the_physical
+		x = 7
+		y = 6
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_scareme
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.46
+			}
+		}
+		completion_reward = {
+		add_ideas = CAL_investigationsphysical
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.48
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_harnessthepoweroftheparanormal
+		icon = GFX_harness_the_power_of_the_paranormal
+		x = 7
+		y = 7
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_investigationsintothephysical
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.49
+			}
+		}
+		completion_reward = {
+		swap_ideas = {
+		remove_idea = CAL_investigationsphysical
+		add_idea = CAL_harnessingparanormal
+		}
+			country_event = {
+				days = 5
+				id = CAL.50
+			}
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.51
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_seizebigbussiness
+		icon = GFX_seize_big_business
+		x = 7
+		y = 8
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_harnessthepoweroftheparanormal
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.52
+			}
+		}
+		completion_reward = {
+		add_stability = -0.12
+		add_war_support = -0.08
+				378 = {
+	add_building_construction = {
+		type = industrial_complex
+		level = 2
+		instant_build = yes
+				}
+			}
+				378 = {
+	add_building_construction = {
+		type = arms_factory
+		level = 1
+		instant_build = yes
+				}
+			}			
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.54
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_californianfreedom
+		icon = GFX_californian_freedom
+		x = 9
+		y = 6
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_scareme
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.55
+			}
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.18
+			}
+
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.57
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_raiseinternationalmilitas
+		icon = GFX_raise_international_militias
+		x = 9
+		y = 7
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_californianfreedom
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.58
+			}
+		}
+		completion_reward = {
+		custom_effect_tooltip = "International Militias will appear in Los Angeles to defend our Realm."
+			hidden_effect = {
+			load_oob = CAL_intlmilitias
+				country_event = {
+					days = 10
+					id = CAL.60
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_thebellline
+		icon = GFX_the_bell_line
+		x = 9
+		y = 8
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_raiseinternationalmilitas
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.61
+			}
+		}
+		completion_reward = {
+		add_ideas = CAL_thebellline_idea
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.63
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_waragainstthehiddenrulers
+		icon = GFX_war_against_the_hidden_rulers
+		x = 5
+		y = 9
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_seizebigbussiness
+		}
+		prerequisite = {
+			focus = CAL_colonizehawaii
+		}
+		prerequisite = {
+			focus = CAL_endpapism
+		}
+		prerequisite = {
+			focus = CAL_thebellline
+		}
+		prerequisite = {
+			focus = CAL_beyondchristianity
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_subject = no
+		}
+		select_effect = {
+			country_event = {
+				id = CAL.64
+			}
+		}
+		completion_reward = {
+		add_ideas = CAL_waragainsthidden
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.66
+				}
+			}
+		}
+	}
+	####### SPIRITUALIST TREE END ##########
+	####### DEMOCRATIC TREE BEGIN ##########
+	#United Front Path
+	focus = {
+		id = CAL_unitedfrontvictory
+		icon = GFX_united_front_victory
+		x = 14
+		y = 5
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_electionday
+		}
+		available = {
+			has_country_flag = united_front_in_power
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		select_effect = {
+			country_event = {
+				days = 0
+				id = CAL.73
+			}
+		}
+		completion_reward = {
+		add_stability = 0.20
+			country_event = {
+				days = 5
+				id = CAL.74
+			}
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.75
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_disbandspiritualistparty
+		icon = GFX_disband_spiritualist_party
+		x = -2
+		y = 1
+		relative_position_id = CAL_unitedfrontvictory
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_unitedfrontvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_popularity = {
+		ideology = despotism
+		popularity = -0.25
+		}
+			country_event = {
+				days = 1
+				id = CAL.77
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.78
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_exilesinclair
+		icon = GFX_exile_sinclair
+		x = 0
+		y = 1
+		relative_position_id = CAL_unitedfrontvictory
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_unitedfrontvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_popularity = {
+		ideology = anarchism
+		popularity = -0.25
+		}
+			country_event = {
+				days = 1
+				id = CAL.80
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.81
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_integratethemormons
+		icon = GFX_integrate_the_mormons
+		x = 2
+		y = 1
+		relative_position_id = CAL_unitedfrontvictory
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_unitedfrontvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_manpower = 23432
+		add_stability = 0.10
+		custom_effect_tooltip = "The Mormons will have more influence in our politics..."
+			country_event = {
+				days = 1
+				id = CAL.82
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.83
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_allinorder
+		icon = GFX_all_in_order
+		x = 0
+		y = 2
+		relative_position_id = CAL_unitedfrontvictory
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_disbandspiritualistparty
+		}
+		prerequisite = {
+			focus = CAL_exilesinclair
+		}
+		prerequisite = {
+			focus = CAL_integratethemormons
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = 50
+			country_event = {
+				days = 10
+				id = CAL.85
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.86
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_anotherelection
+		icon = GFX_split_in_our_democracy
+		x = 0
+		y = 1
+		relative_position_id = CAL_allinorder
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_allinorder
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = {
+				days = 5
+				id = CAL.87
+			}
+			hidden_effect = {
+				country_event = {
+					days = 10
+					id = CAL.88
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_democratvictory
+		icon = GFX_revived_democratic_party
+		x = -2
+		y = 1
+		relative_position_id = CAL_anotherelection
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_anotherelection
+		}
+		mutually_exclusive = {
+			focus = CAL_republicanvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				set_politics = {
+		ruling_party = conservatism
+		elections_allowed = no
+		}
+			country_event = {
+				days = 1
+				id = CAL.89
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.90
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_orangesandmilk
+		icon = GFX_oranges_and_milk_cartoons
+		x = -2
+		y = 1
+		relative_position_id = CAL_democratvictory
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_democratvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_oranges
+				378 = {
+	add_building_construction = {
+		type = infrastructure
+		level = 2
+		instant_build = yes
+				}
+			}
+			country_event = {
+				days = 1
+				id = CAL.91
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.92
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_protectionism
+		icon = GFX_protectionism
+		x = 0
+		y = 1
+		relative_position_id = CAL_orangesandmilk
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_orangesandmilk
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = limited_exports
+			country_event = {
+				days = 1
+				id = CAL.93
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.94
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_protectsegregationistlifestyle
+		icon = GFX_protect_segregationist_lifestyle
+		x = 0
+		y = 1
+		relative_position_id = CAL_democratvictory
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_democratvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		add_political_power = 100
+		add_popularity = {
+		ideology = reactionism
+		popularity = 0.10
+		}
+			country_event = {
+				days = 1
+				id = CAL.95
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.96
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_unitarybutwithautonomy
+		icon = GFX_unitary_but_with_autonomy
+		x = 0
+		y = 1
+		relative_position_id = CAL_protectsegregationistlifestyle
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_protectsegregationistlifestyle
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_unitary
+			country_event = {
+				days = 1
+				id = CAL.97
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.98
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_upholddemocracyinthewest
+		icon = GFX_uphold_democracy_in_the_west
+		x = 0
+		y = 2
+		relative_position_id = CAL_anotherelection
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_democratvictory
+			focus = CAL_republicanvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_democracy
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.100
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_kickoutthemexicans
+		icon = GFX_kick_out_mexicans
+		x = 0
+		y = 1
+		relative_position_id = CAL_upholddemocracyinthewest
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_upholddemocracyinthewest
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			378 = {
+				add_manpower = -150000
+			}
+			add_stability = 0.20
+			country_event = {
+				days = 1
+				id = CAL.101
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.102
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_protecttheelectoralcollege
+		icon = GFX_protect_the_electoral_college
+		x = 0
+		y = 1
+		relative_position_id = CAL_kickoutthemexicans
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_kickoutthemexicans
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+			country_event = {
+				days = 1
+				id = CAL.103
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.104
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_republicanvictory
+		icon = GFX_republican_victory
+		x = 2
+		y = 1
+		relative_position_id = CAL_anotherelection
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_anotherelection
+		}
+		mutually_exclusive = {
+			focus = CAL_democratvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				set_politics = {
+		ruling_party = liberalism
+		elections_allowed = no
+		}
+			country_event = {
+				days = 1
+				id = CAL.105
+			}
+			hidden_effect = {
+				country_event = {
+					days = 5
+					id = CAL.106
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_protectindividualfreedoms
+		icon = GFX_protect_individual_freedoms
+		x = 0
+		y = 1
+		relative_position_id = CAL_republicanvictory
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_republicanvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_individualism
+			country_event = {
+				days = 1
+				id = CAL.107
+			}
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.108
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_reclaimthedollar
+		icon = GFX_reclaim_the_dollar
+		x = 0
+		y = 1
+		relative_position_id = CAL_protectindividualfreedoms
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_protectindividualfreedoms
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_dollar
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.110
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_austerity
+		icon = GFX_austerity
+		x = 2
+		y = 1
+		relative_position_id = CAL_republicanvictory
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_republicanvictory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = 50
+		add_stability = -0.10
+			country_event = {
+				days = 1
+				id = CAL.111
+			}
+			hidden_effect = {
+				country_event = {
+					days = 2
+					id = CAL.112
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_allowprivateinstitutionstosurvive
+		icon = GFX_allowprivateinstitutionstosurvive
+		x = 0
+		y = 1
+		relative_position_id = CAL_austerity
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_austerity
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+						378 = {
+	add_building_construction = {
+		type = industrial_complex
+		level = 2
+		instant_build = yes
+				}
+			}
+		}
+	}
+
+	##### SINCLAIR TREE
+	focus = {
+		id = CAL_howiwillendpoverty
+		icon = GFX_how_i_will_end_poverty
+		cost = 6
+		relative_position_id = CAL_electionday
+		x = 9
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_electionday
+		}
+		available = {
+			has_country_flag = sinclair_in_power
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = CAL_iwilleducatepoor
+		icon = GFX_i_will_educate_the_poor
+		cost = 6
+		relative_position_id = CAL_howiwillendpoverty
+		x = -3
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_howiwillendpoverty
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_research_slot = 1
+		add_political_power = -100
+		add_popularity = {
+		ideology = revisionist_socialism
+		popularity = 0.15
+		}
+		}
+	}
+	focus = {
+		id = CAL_aswegomarching
+		icon = GFX_as_we_go_marching_marching
+		cost = 6
+		relative_position_id = CAL_iwilleducatepoor
+		x = 1
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_iwilleducatepoor
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = 75
+		add_war_support = 0.10
+		}
+	}
+	focus = {
+		id = CAL_workersproducingforthemselves
+		icon = GFX_workers_producing_for_themselves
+		cost = 6
+		relative_position_id = CAL_aswegomarching
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_aswegomarching
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_autonomousworkers
+		}
+	}
+	focus = {
+		id = CAL_campaignsacrosscountryside
+		icon = GFX_campaigns_across_the_countryside
+		cost = 6
+		relative_position_id = CAL_howiwillendpoverty
+		x = -1
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_howiwillendpoverty
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_popularity = {
+		ideology = revisionist_socialism
+		popularity = 0.10
+		}
+		}
+	}
+	focus = {
+		id = CAL_strikeathollywood
+		icon = GFX_strike_at_hollywood
+		cost = 6
+		relative_position_id = CAL_howiwillendpoverty
+		x = 1
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_howiwillendpoverty
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+				add_popularity = {
+		ideology = despotism
+		popularity = -0.30
+		}
+		}
+	}
+	focus = {
+		id = CAL_iwillfeedpoor
+		icon = GFX_i_will_feed_the_poor
+		cost = 6
+		relative_position_id = CAL_howiwillendpoverty
+		x = 0
+		y = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_howiwillendpoverty
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = -100
+		add_stability = 0.10
+		}
+	}
+	focus = {
+		id = CAL_destroyindustrialautocracy
+		icon = GFX_destroy_autocracy_in_industry
+		cost = 6
+		relative_position_id = CAL_iwillfeedpoor
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_iwillfeedpoor
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+				add_popularity = {
+		ideology = conservatism
+		popularity = -0.30
+		}
+				378 = {
+	add_building_construction = {
+		type = industrial_complex
+		level = 3
+		instant_build = yes
+				}
+			}
+		add_stability = -0.10
+		}
+	}
+	focus = {
+		id = CAL_iwillhousepoor
+		icon = GFX_i_will_house_the_poor
+		cost = 6
+		relative_position_id = CAL_howiwillendpoverty
+		x = 3
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_howiwillendpoverty
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+				378 = {
+	add_building_construction = {
+		type = infrastructure
+		level = 1
+		instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_coatsforthecold
+		icon = GFX_coats_for_the_cold
+		cost = 6
+		relative_position_id = CAL_iwillhousepoor
+		x = -1
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_iwillhousepoor
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_war_support = 0.20
+		}
+	}
+	focus = {
+		id = CAL_attackpeopleofluxury
+		icon = GFX_attack_the_people_of_luxury
+		cost = 6
+		relative_position_id = CAL_coatsforthecold
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_coatsforthecold
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_popularity = {
+		ideology = conservatism
+		popularity = -0.30
+		}
+		}
+	}
+
+	focus = {
+		id = CAL_throughthemajority
+		icon = GFX_through_the_majority
+		cost = 2
+		relative_position_id = CAL_destroyindustrialautocracy
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_workersproducingforthemselves
+		}
+		prerequisite = {
+			focus = CAL_destroyindustrialautocracy
+		}
+		prerequisite = {
+			focus = CAL_attackpeopleofluxury
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_politicalmachine
+			
+		}
+	}
+	focus = {
+		id = CAL_the_12_principles
+		icon = GFX_the_12_principles
+		cost = 2
+		relative_position_id = CAL_throughthemajority
+		x = -2
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_throughthemajority
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_twelveprinciples
+		}
+	}
+	focus = {
+		id = CAL_christianwelfare
+		icon = GFX_christian_welfare
+		cost = 2
+		relative_position_id = CAL_throughthemajority
+		x = 2
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_throughthemajority
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_christianwelfare
+		}
+	}
+	focus = {
+		id = CAL_puredemocracy
+		icon = GFX_pure_democracy
+		cost = 2
+		relative_position_id = CAL_throughthemajority
+		x = 0
+		y = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_the_12_principles
+		}
+		prerequisite = {
+			focus = CAL_christianwelfare
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_puredemocracy
+		}
+	}
+
+	##### INDUSTRY TREE
+	focus = {
+		id = CAL_road_to_a_better_california
+		icon = GFX_road_to_a_better_california
+		cost = 6
+		x = 29
+		y = 0
+		available_if_capitulated = yes
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			378 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			add_stability = 0.07
+		}
+	}
+	focus = {
+		id = CAL_bay_area_industries
+		icon = GFX_bay_area_industries
+		cost = 6
+		relative_position_id = CAL_road_to_a_better_california
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_road_to_a_better_california
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			378 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+					}
+				}
+			378 = {
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_sierra_nevada_trail
+		icon = GFX_sierra_nevada_trail
+		cost = 8
+		relative_position_id = CAL_bay_area_industries
+		x = -2
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_bay_area_industries
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			378 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = CAL_sierranevada
+		}
+	}
+	focus = {
+		id = CAL_railroads_from_the_shasta_cascades
+		icon = GFX_railroad_from_shasta_cascades
+		cost = 6
+		relative_position_id = CAL_sierra_nevada_trail
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_sierra_nevada_trail
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			1046 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_palm_springs
+		icon = GFX_to_palm_springs
+		cost = 6
+		relative_position_id = CAL_railroads_from_the_shasta_cascades
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_railroads_from_the_shasta_cascades
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			378 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_gold_country_mines
+		icon = GFX_gold_country_mines
+		cost = 8
+		relative_position_id = CAL_bay_area_industries
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_bay_area_industries
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			378 = {
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_san_joaquin_valley_conservation_corps
+		icon = GFX_establish_the_san_joaquin_valley_conservation_authority
+		cost = 4
+		relative_position_id = CAL_gold_country_mines
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_gold_country_mines
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		add_political_power = 100
+		}
+	}
+	focus = {
+		id = CAL_san_joaquin_valley_farms
+		icon = GFX_san_joaquin_valley_farms
+		cost = 6
+		relative_position_id = CAL_bay_area_industries
+		x = 2
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_bay_area_industries
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_farms
+		}
+	}
+	focus = {
+		id = CAL_free_land_to_settlers
+		icon = GFX_free_land_to_settlers
+		cost = 6
+		relative_position_id = CAL_san_joaquin_valley_farms
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_san_joaquin_valley_farms
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		378 = {
+		add_manpower = 375241
+		}
+		add_political_power = -150
+		}
+	}
+	focus = {
+		id = CAL_border_region_agriculture
+		icon = GFX_border_region_agriculture
+		cost = 6
+		relative_position_id = CAL_free_land_to_settlers
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_free_land_to_settlers
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_political_power = 25
+		add_stability = 0.10
+		}
+	}
+	focus = {
+		id = CAL_south_california_arms
+		icon = GFX_southern_california_arms_factories
+		cost = 8
+		relative_position_id = CAL_bay_area_industries
+		x = 4
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_bay_area_industries
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		CAL = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 8000
+				producer = USA
+			}
+			}
+		}
+	}
+	focus = {
+		id = CAL_eastern_deseret_military_camps
+		icon = GFX_eastern_deseret_military_camps
+		cost = 6
+		relative_position_id = CAL_south_california_arms
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_south_california_arms
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_militarytraining
+		}
+	}
+	focus = {
+		id = CAL_fortifications_against_enemies
+		icon = GFX_fortifications_against_our_enemies
+		cost = 8
+		relative_position_id = CAL_eastern_deseret_military_camps
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_eastern_deseret_military_camps
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			1046 = {
+				add_building_construction = {
+					type = bunker
+					province = 4347
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+					province = 3471
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+					province = 11733
+					level = 2
+				}
+				add_building_construction = {
+					type = bunker
+					province = 11495
+					level = 2
+				}
+			} 
+		}
+	}
+
+	##### NAVY TREE
+	focus = {
+		id = CAL_naval_discussions
+		icon = GFX_naval_discussions
+		cost = 2
+		x = 37
+		y = 0
+		available_if_capitulated = yes
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 15
+		}
+	}
+	focus = {
+		id = CAL_bay_area_expansion
+		icon = GFX_bay_area_expansion
+		cost = 2
+		relative_position_id = CAL_naval_discussions
+		x = -1
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_naval_discussions
+		}
+		mutually_exclusive = {
+			focus = CAL_new_dockyards
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = CAL_bayarea
+		}
+	}
+	focus = {
+		id = CAL_new_dockyards
+		icon = GFX_new_dockyards
+		cost = 2
+		relative_position_id = CAL_naval_discussions
+		x = 1
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_naval_discussions
+		}
+		mutually_exclusive = {
+			focus = CAL_bay_area_expansion
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+				378 = {
+	add_building_construction = {
+		type = dockyard
+		level = 2
+		instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_carrier_experiments
+		icon = GFX_carrier_experiments
+		cost = 2
+		relative_position_id = CAL_naval_discussions
+		x = -1
+		y = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_bay_area_expansion
+			focus = CAL_new_dockyards
+		}
+		mutually_exclusive = {
+			focus = CAL_submarine_doctrine
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = { bonus = 1 uses = 2 category = naval_air }
+		}
+	}
+	focus = {
+		id = CAL_submarine_doctrine
+		icon = GFX_submarine_doctrine
+		cost = 2
+		relative_position_id = CAL_naval_discussions
+		x = 1
+		y = 2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_bay_area_expansion
+			focus = CAL_new_dockyards
+		}
+		mutually_exclusive = {
+			focus = CAL_carrier_experiments
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = sub_op_bonus
+				cost_reduction = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+	focus = {
+		id = CAL_fleet_in_being_focus
+		icon = GFX_fleet_in_being_focus
+		cost = 2
+		relative_position_id = CAL_naval_discussions
+		x = -1
+		y = 3
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_carrier_experiments
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = fleet_in_being_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+	focus = {
+		id = CAL_against_a_bigger_opponent
+		icon = GFX_against_a_bigger_opponent
+		cost = 2
+		relative_position_id = CAL_naval_discussions
+		x = 1
+		y = 3
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_submarine_doctrine
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		navy_experience = 50
+		}
+	}
+
+	##### ARMY TREE
+	focus = {
+		id = CAL_californian_militias_into_army
+		icon = GFX_californian_militias_into_army
+		cost = 2
+		x = 43
+		y = 0
+		available_if_capitulated = yes
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		swap_ideas = {
+		remove_idea = CAL_militias
+		add_idea = CAL_army
+		}
+		}
+	}
+	focus = {
+		id = CAL_what_doctrine
+		icon = GFX_what_doctrine
+		cost = 2
+		relative_position_id = CAL_californian_militias_into_army
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_californian_militias_into_army
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		army_experience = 50
+		}
+	}
+	focus = {
+		id = CAL_artillery_attacks
+		icon = GFX_artillery_attacks
+		cost = 2
+		relative_position_id = CAL_what_doctrine
+		x = -2
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_what_doctrine
+		}
+		mutually_exclusive = {
+			focus = CAL_speedy_effectiveness
+		}
+		mutually_exclusive = {
+			focus = CAL_well_carried_out_plans
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+			bonus = 1
+			uses = 3
+			category = artillery
+		}
+		}
+	}
+	focus = {
+		id = CAL_barrages_of_fire
+		icon = GFX_barrages_of_fire
+		cost = 2
+		relative_position_id = CAL_artillery_attacks
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_artillery_attacks
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_superior_firepower
+		}
+		}
+	}
+	focus = {
+		id = CAL_only_volunteers_behind_them
+		icon = GFX_only_volunteers_behind_them
+		cost = 2
+		relative_position_id = CAL_barrages_of_fire
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_barrages_of_fire
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_stability = 0.10
+		add_ideas = volunteer_only
+		add_ideas = CAL_volunteers
+		}
+	}
+	focus = {
+		id = CAL_speedy_effectiveness
+		icon = GFX_speedy_effectiveness
+		cost = 2
+		relative_position_id = CAL_what_doctrine
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_what_doctrine
+		}
+		mutually_exclusive = {
+			focus = CAL_artillery_attacks
+		}
+		mutually_exclusive = {
+			focus = CAL_well_carried_out_plans
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+				add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_mobile_warfare
+			}
+		}
+	}
+	focus = {
+		id = CAL_mobile_frontlines
+		icon = GFX_mobile_frontlines
+		cost = 2
+		relative_position_id = CAL_speedy_effectiveness
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_speedy_effectiveness
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+				add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_mobile_warfare
+			}
+		}
+	}
+	focus = {
+		id = CAL_tank_and_truck_research
+		icon = GFX_tank_and_truck_research
+		cost = 2
+		relative_position_id = CAL_mobile_frontlines
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_mobile_frontlines
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = armor
+		}		
+		}
+	}
+	focus = {
+		id = CAL_well_carried_out_plans
+		icon = GFX_well_carried_out_plans
+		cost = 2
+		relative_position_id = CAL_what_doctrine
+		x = 2
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_what_doctrine
+		}
+		mutually_exclusive = {
+			focus = CAL_artillery_attacks
+		}
+		mutually_exclusive = {
+			focus = CAL_speedy_effectiveness
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 1
+			category = cat_grand_battle_plan
+		}
+		}
+	}
+	focus = {
+		id = CAL_digging_down_and_holding_on
+		icon = GFX_digging_down_and_holding_on
+		cost = 2
+		relative_position_id = CAL_well_carried_out_plans
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_well_carried_out_plans
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 1
+			category = cat_grand_battle_plan
+		}
+		add_ideas = CAL_digging
+		}
+	}
+	focus = {
+		id = CAL_then_a_well_planned_attack
+		icon = GFX_then_a_well_planned_attack
+		cost = 2
+		relative_position_id = CAL_digging_down_and_holding_on
+		x = 0
+		y = 1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_digging_down_and_holding_on
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		swap_ideas = {
+		remove_idea = CAL_digging
+		add_idea = CAL_attackdigging
+		}
+		}
+	}
+
+	##### The other three
+	focus = {
+		id = CAL_oh_how_the_mighty_hath_fallen
+		icon = GFX_oh_how_the_mighty_hath_fallen
+		cost = 2
+		x = 50
+		y = 0
+		available_if_capitulated = yes
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+		add_war_support = 0.10
+		}
+	}
+	focus = {
+		id = CAL_entrench_ourselves
+		icon = GFX_entrench_ourselves
+		cost = 2
+		x = -2
+		y = 1
+		relative_position_id = CAL_oh_how_the_mighty_hath_fallen
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_oh_how_the_mighty_hath_fallen
+		}
+		mutually_exclusive = {
+			focus = CAL_greater_california_idea
+		}
+		available = {
+			is_subject = no
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = CAL_entrenchment
+			hidden_effect = {
+			set_country_flag = CAL_entrench
+			}
+			custom_effect_tooltip = "We will unlock decisions to further protect our nation from invaders."
+		}
+	}
+	focus = {
+		id = CAL_greater_california_idea
+		icon = GFX_greater_california_idea
+		cost = 2
+		x = 2
+		y = 1
+		relative_position_id = CAL_oh_how_the_mighty_hath_fallen
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = CAL_oh_how_the_mighty_hath_fallen
+		}
+		available = {
+			OR = {
+				has_government = revisionist_socialism
+				has_government = despotism
+			}
+			is_subject = no
+		}
+		mutually_exclusive = {
+			focus = CAL_entrench_ourselves
+		}
+		ai_will_do  = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = "We will unlock decisions to expand our nation (and potentially unify the United States)."
+			hidden_effect = {
+				set_country_flag = CAL_expand
+			}
+		}
+	}
+}
