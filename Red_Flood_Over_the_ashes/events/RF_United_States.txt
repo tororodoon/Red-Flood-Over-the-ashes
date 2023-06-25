@@ -517,10 +517,6 @@ country_event = {
 					keep_completed = yes
 				}
 			}
-			country_event = {
-				id = usa.324
-				days = 713
-			}
 			set_politics = {
 				ruling_party = popular_socialism
 			}
